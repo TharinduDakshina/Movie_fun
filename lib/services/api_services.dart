@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:movie_fun/models/movie_details_Model.dart';
 
 import '../models/movies_model.dart';
 
@@ -18,13 +19,18 @@ class ApiService {
       Map<String,dynamic> body = jsonDecode(response.body);
       List<dynamic> data = body['results'] as List;
       List<Movie> movies = data.map((movie)=> Movie.fromJson(movie)).toList();
-      print("--> ${movies[0].posterPath}");
-      print("--> ${movies[0].title}");
-      print("--> ${movies[0].id}");
-      print("--> ${movies[0].backdropPath}");
-      print("--> ${movies[0].overview}");
       return movies;
     } else {
+      throw Exception(response.statusCode);
+    }
+  }
+
+  Future<MovieDetailsModel> getDetails({required String id}) async {
+    Response response = await get(Uri.parse("https://api.themoviedb.org/3/movie/${id}?language=en-US"),headers: headers);
+    if(response.statusCode == 200){
+      Map<String,dynamic> json = jsonDecode(response.body);
+      return MovieDetailsModel.fromJson(json);
+    }else{
       throw Exception(response.statusCode);
     }
   }
