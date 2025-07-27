@@ -1,16 +1,42 @@
-# movie_fun
+# 🎬 Movie Fun
 
-This is the movie app usingTMDB and flutter
+**Movie Fun** is a Flutter-based mobile application that allows users to explore trending and popular movies by integrating with **TMDB (The Movie Database)** API. It provides an engaging user interface and uses HTTP requests powered by the `http` Dart package.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📡 Fetches data from the TMDB API
+- 🔍 Displays popular and trending movies
+- 💡 Simple and intuitive UI
+- ⚙️ Built using Flutter and Dart
+- 📦 Uses `http` package for API calls
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech Stack
+
+| Technology | Description                    |
+|------------|--------------------------------|
+| Flutter    | UI Toolkit for building the app|
+| Dart       | Programming language           |
+| TMDB API   | Movie data provider            |
+| http       | HTTP requests package in Dart  |
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Flutter SDK installed
+- Android Studio or VS Code
+- TMDB API Key
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/movie-fun.git
+cd movie-fun
+flutter pub get
+flutter run
